@@ -17,7 +17,11 @@
       "bundleIdentifier": "com.anonymous.vhack25",
       "infoPlist": {
         "NSCameraUsageDescription": "Allow $(PRODUCT_NAME) to access your camera",
-        "NSMicrophoneUsageDescription": "Allow $(PRODUCT_NAME) to access your microphone"
+        "NSMicrophoneUsageDescription": "Allow $(PRODUCT_NAME) to access your microphone",
+        "UIBackgroundModes": [
+          "audio"
+        ],
+        "NSLocationWhenInUseUsageDescription": "This app needs access to your location to find nearby assistance options."
       }
     },
     "android": {
@@ -28,7 +32,9 @@
       "package": "com.anonymous.vhack25",
       "permissions": [
         "CAMERA",
-        "RECORD_AUDIO"
+        "RECORD_AUDIO",
+        "ACCESS_FINE_LOCATION", 
+        "ACCESS_COARSE_LOCATION"
       ]
     },
     "web": {
@@ -40,13 +46,20 @@
         "expo-camera",
         {
           "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera",
-          "microphonePermission": "Allow $(PRODUCT_NAME) to access your microphone",
+          "microphonePermission": "Allow $(PRODUCT_NAME) to access your microphone"
         }
       ],
       [
         "expo-av",
         {
           "microphonePermission": "Allow $(PRODUCT_NAME) to access your microphone."
+        }
+      ],
+      "expo-audio",
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow Medimate to use your location to find nearby assistance options."
         }
       ]
     ]
